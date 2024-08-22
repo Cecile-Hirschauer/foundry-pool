@@ -66,9 +66,10 @@ After running the tests, you can check the code coverage by running:
 
 ```bash
 forge coverage
-```
-![image](https://github.com/user-attachments/assets/7aac381e-644b-4b96-b760-e3ee646d0364)
 
+```
+
+![image](https://github.com/user-attachments/assets/7aac381e-644b-4b96-b760-e3ee646d0364)
 
 
 ### License
