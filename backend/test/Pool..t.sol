@@ -179,7 +179,14 @@ contract PoolTest is Test {
 
         // Simulate a successful withdrawal by the owner
         vm.prank(owner);
+        uint256 balanceBeforeWithdraw = owner.balance;
         pool.withdraw();
+        uint256 balanceAfterWithdraw = owner.balance;
+
+        // Check balance of owner after withdrwaw.
+        // Must be equal to sum of contributions and minimum equal to goal,
+        // Here 10 ether
+        assertEq(balanceBeforeWithdraw + 10 ether, balanceAfterWithdraw);
     }
 
     // Test if the contract reverts when trying to request a refund before the end time
@@ -281,8 +288,14 @@ contract PoolTest is Test {
         // Fast forward time to after the end of the pool
         vm.warp(pool.end() + 3600);
 
+        uint256 balanceBeforerefund = addr1.balance;
+
         // Simulate a successful refund request from addr1
         vm.prank(addr1);
         pool.refund();
+
+        uint256 balanceAfterRefund = addr1.balance;
+        // Check if addr1 balance after refund is equal to 1 ether (its contribution)
+        assertEq(balanceBeforerefund + 1 ether, balanceAfterRefund);
     }
 }
