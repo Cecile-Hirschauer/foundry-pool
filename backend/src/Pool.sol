@@ -18,10 +18,10 @@ error NotEnoughFounds();
 contract Pool is Ownable {
     /// @notice The timestamp when the fundraising ends
     uint256 public end;
-    
+
     /// @notice The goal amount to be raised in the pool (in wei)
     uint256 public goal;
-    
+
     /// @notice The total amount of ether collected so far (in wei)
     uint256 public totalCollected;
 
@@ -60,11 +60,11 @@ contract Pool is Ownable {
     /// @notice Allows the owner to withdraw the total amount collected if the goal is reached
     /// @dev Reverts if the fundraising is still ongoing or if the goal is not reached
     function withdraw() external onlyOwner {
-        if (block.timestamp > end || totalCollected < goal) {
+        if (block.timestamp < end || totalCollected < goal) {
             revert CollectNotFinished();
         }
 
-        (bool sent,) = msg.sender.call{value: address(this).balance}("");
+        (bool sent, ) = msg.sender.call{value: address(this).balance}("");
         if (!sent) {
             revert FailedToSendEther();
         }
@@ -82,12 +82,12 @@ contract Pool is Ownable {
         }
         if (contributions[msg.sender] == 0) {
             revert NoContribution();
-        }   
+        }
 
         uint256 amount = contributions[msg.sender];
         contributions[msg.sender] = 0;
         totalCollected -= amount;
-        (bool sent,) = msg.sender.call{value: amount}("");
+        (bool sent, ) = msg.sender.call{value: amount}("");
         if (!sent) {
             revert FailedToSendEther();
         }
