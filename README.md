@@ -71,6 +71,7 @@ forge coverage
 Here are the results of the code coverage for the Pool contract:
 
 [⠊] Compiling...
+
 [⠰] Compiling 27 files with Solc 0.8.24
 [⠑] Solc 0.8.24 finished in 3.28s
 Compiler run successful!
