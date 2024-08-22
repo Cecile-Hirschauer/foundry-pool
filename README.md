@@ -71,6 +71,9 @@ forge coverage
 
 ```
 
+![image](https://github.com/user-attachments/assets/7aac381e-644b-4b96-b760-e3ee646d0364)
+
+
 ### Deployment
 
 To deploy the Pool contract, use the deployment script provided in the script directory. You can deploy the contract using the following command:
@@ -94,9 +97,6 @@ The deployment transaction is saved in:
 - **Sensitive Values:** cache/Deploy.s.sol/31337/run-latest.json
 
 **Note:** The deployment was successful, but it's important to verify that the deployed contract is functioning as expected in your specific environment.
-
-
-![image](https://github.com/user-attachments/assets/7aac381e-644b-4b96-b760-e3ee646d0364)
 
 ## License
 
