@@ -40,7 +40,7 @@ To work with this project, you will need:
     ```bash
     git clone https://github.com/Cecile-Hirschauer/foundry-pool.git
     cd foundry-pool
-    ``` 
+    ```
 
 2. Install the necessary dependencies:
 
@@ -70,7 +70,6 @@ forge coverage
 ```
 
 ![image](https://github.com/user-attachments/assets/7aac381e-644b-4b96-b760-e3ee646d0364)
-
 
 ### License
 
