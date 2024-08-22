@@ -13,7 +13,9 @@ This project implements a simple crowdfunding pool using the Solidity programmin
   - [Usage](#usage)
     - [Running Tests](#running-tests)
     - [Coverage](#coverage)
-    - [License](#license)
+    - [Deployment](#deployment)
+      - [Deployment Details](#deployment-details)
+  - [License](#license)
 
 ## Project Overview
 
@@ -69,8 +71,33 @@ forge coverage
 
 ```
 
+### Deployment
+
+To deploy the Pool contract, use the deployment script provided in the script directory. You can deploy the contract using the following command:
+
+```bash
+forge script script/Deploy.s.sol:MyScript --fork-url http://127.0.0.1:8545 --broadcast
+
+```
+
+#### Deployment Details
+
+- **Estimated Gas Used:** 562,534
+- **Estimated ETH Required:** 0.001125068 ETH
+- **Contract Address:** 0x5FbDB2315678afecb367f032d93F642f64180aa3
+- **Block:** 1
+- **Gas Paid:** 432,831 gas * 1.000000001 gwei = 0.000432831 ETH
+
+The deployment transaction is saved in:
+
+- **Transactions:** broadcast/Deploy.s.sol/31337/run-latest.json
+- **Sensitive Values:** cache/Deploy.s.sol/31337/run-latest.json
+
+**Note:** The deployment was successful, but it's important to verify that the deployed contract is functioning as expected in your specific environment.
+
+
 ![image](https://github.com/user-attachments/assets/7aac381e-644b-4b96-b760-e3ee646d0364)
 
-### License
+## License
 
 This project is licensed under the MIT License. See the LICENSE file for details.
